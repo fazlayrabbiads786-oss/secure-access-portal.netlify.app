@@ -4,12 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Access Your Content | Secure Portal</title>
-  <!-- Open Graph Meta Tags (Social Media Link Preview) -->
+  
   <meta property="og:title" content="Secure Verification Portal">
   <meta property="og:description" content="Click here to verify and access your requested content securely.">
-  <meta property="og:type" content="website">
   
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,7 +17,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
     body {
       min-height: 100vh;
@@ -29,10 +27,8 @@
       justify-content: center;
       padding: 20px;
       color: #f1f5f9;
-      overflow-x: hidden;
       position: relative;
     }
-    /* Ambient Background Glows */
     .glow {
       position: absolute;
       border-radius: 50%;
@@ -41,3 +37,179 @@
       pointer-events: none;
     }
     .glow-1 {
+      width: 320px;
+      height: 320px;
+      background: rgba(59, 130, 246, 0.25);
+      top: 15%;
+      left: 20%;
+    }
+    .glow-2 {
+      width: 280px;
+      height: 280px;
+      background: rgba(139, 92, 246, 0.25);
+      bottom: 15%;
+      right: 20%;
+    }
+    .card {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 440px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      padding: 36px 24px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      text-align: center;
+    }
+    .icon-wrapper {
+      width: 74px;
+      height: 74px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2));
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #60a5fa;
+    }
+    .icon-wrapper svg {
+      width: 36px;
+      height: 36px;
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    p.subtitle {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+    .timer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: #38bdf8;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .pulsing-dot {
+      width: 8px;
+      height: 8px;
+      background: #38bdf8;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #38bdf8;
+    }
+    .btn-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px -6px rgba(37, 99, 235, 0.5);
+      transition: all 0.25s ease;
+    }
+    .btn-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px -4px rgba(124, 58, 237, 0.6);
+    }
+    .btn-action svg {
+      width: 20px;
+      height: 20px;
+    }
+    .badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    .badge-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge-item svg {
+      width: 14px;
+      height: 14px;
+      color: #10b981;
+    }
+    .footer-note {
+      margin-top: 14px;
+      font-size: 11px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <main class="card">
+    <div class="icon-wrapper">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    </div>
+
+    <h1>Secure Link Verification</h1>
+    <p class="subtitle">আপনার অনুরোধকৃত ফাইল ও কনটেন্ট প্রস্তুত আছে। প্রবেশ করতে নিচের বাটনে ক্লিক করুন।</p>
+
+    <div class="timer-badge">
+      <div class="pulsing-dot"></div>
+      <span>লিংক প্রস্তুত • ভেরিফাইড</span>
+    </div>
+
+    <!-- Adsterra Direct Link -->
+    <a href="https://laidindignation.com/wweijhkwg?key=86e1dc420703e2079b1ebec569efcdb9" 
+       class="btn-action" 
+       target="_blank"
+       rel="noopener noreferrer">
+      <span>Continue to Access</span>
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      </svg>
+    </a>
+
+    <div class="badges">
+      <div class="badge-item">
+        <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        <span>256-bit SSL</span>
+      </div>
+      <div class="badge-item">
+        <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        <span>Safe Browsing</span>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Protected by Cloud-Security Gateway
+    </div>
+  </main>
+
+</body>
+</html>

@@ -1,103 +1,359 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Access Your Content | Secure Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Watch Private Viral Video HD (18+)</title>
+  
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     body {
+      background-color: #0b0e14;
+      color: #ffffff;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at center, #1e293b 0%, #0a0f1d 100%);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: #f8fafc;
-      padding: 20px;
+      padding: 12px;
     }
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 22px;
-      padding: 36px 26px;
-      max-width: 420px;
+
+    .container {
       width: 100%;
-      text-align: center;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
-    .icon { font-size: 52px; margin-bottom: 16px; display: block; }
-    h1 { font-size: 22px; font-weight: 700; margin-bottom: 10px; color: #ffffff; }
-    p { font-size: 14px; color: #94a3b8; margin-bottom: 24px; line-height: 1.5; }
-    .status {
-      display: inline-flex;
+
+    /* Top Notice Badge */
+    .top-badge {
+      display: flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(2, 132, 199, 0.2);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      color: #38bdf8;
-      padding: 6px 16px;
-      border-radius: 999px;
+      justify-content: space-between;
+      background: rgba(255, 46, 99, 0.15);
+      border: 1px solid rgba(255, 46, 99, 0.35);
+      padding: 8px 14px;
+      border-radius: 8px;
       font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 24px;
     }
-    .btn {
+    .top-badge .live-dot {
+      width: 9px;
+      height: 9px;
+      background-color: #ff2e63;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      box-shadow: 0 0 8px #ff2e63;
+      animation: blink 1.2s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.85); }
+    }
+
+    /* Video Title */
+    .video-title {
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #f1f2f6;
+    }
+
+    /* Video Player Frame */
+    .player-card {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #161b22, #0d1117);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #30363d;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      display: block;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Realistic Fake Video Background */
+    .player-bg {
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at center, rgba(255, 46, 99, 0.25) 0%, rgba(0, 0, 0, 0.85) 85%),
+        repeating-linear-gradient(45deg, #181d28 0, #181d28 20px, #121620 20px, #121620 40px);
+      filter: blur(1px);
+    }
+
+    /* Top Tags inside Player */
+    .player-tags {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 2;
+    }
+    .badge-tag {
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .badge-tag.hd {
+      color: #00d2d3;
+      border-color: #00d2d3;
+    }
+
+    /* Big Glowing Play Button */
+    .play-btn-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+    }
+    .play-btn {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, #ff2e63, #ff0844);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 25px rgba(255, 46, 99, 0.8);
+      animation: pulse 1.6s infinite;
+      border: 3px solid rgba(255, 255, 255, 0.8);
+    }
+    .play-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: #ffffff;
+      margin-left: 4px;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 46, 99, 0.7); }
+      70% { transform: scale(1.08); box-shadow: 0 0 0 18px rgba(255, 46, 99, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 46, 99, 0); }
+    }
+
+    /* Bottom Control Bar */
+    .player-controls {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+      padding: 8px 12px;
+      z-index: 2;
+    }
+    .progress-bar-bg {
       width: 100%;
-      padding: 16px;
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      height: 4px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 2px;
+      margin-bottom: 6px;
+      position: relative;
+    }
+    .progress-bar-fill {
+      width: 32%;
+      height: 100%;
+      background: #ff2e63;
+      border-radius: 2px;
+    }
+    .controls-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #ced6e0;
+    }
+
+    /* Main CTA Button */
+    .cta-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px 18px;
+      background: linear-gradient(135deg, #ff2e63, #e8175d);
       color: #ffffff;
       text-decoration: none;
-      font-size: 16px;
-      font-weight: 700;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.45);
-      transition: all 0.25s ease;
+      font-size: 18px;
+      font-weight: 800;
+      border-radius: 10px;
+      box-shadow: 0 4px 18px rgba(255, 46, 99, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.2s ease;
+      animation: pulse-button 2s infinite;
     }
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px rgba(124, 58, 237, 0.55);
-      filter: brightness(1.1);
+    @keyframes pulse-button {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
     }
-    .badge {
-      margin-top: 24px;
-      font-size: 12px;
-      color: #64748b;
+
+    /* Stats info */
+    .video-info {
       display: flex;
+      justify-content: space-around;
+      background: #161b22;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #21262d;
+      font-size: 12px;
+      color: #8b949e;
+      text-align: center;
+    }
+    .video-info span strong {
+      color: #f0f6fc;
+      display: block;
+      font-size: 13px;
+    }
+
+    /* Telegram Box */
+    .telegram-card {
+      background: #111a24;
+      border: 1.5px dashed #229ed9;
+      border-radius: 10px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+      align-items: center;
+    }
+    .telegram-text {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #b3c5d7;
+    }
+    .telegram-button {
+      display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 12px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 16px;
+      gap: 8px;
+      width: 100%;
+      padding: 12px;
+      background-color: #229ed9;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(34, 158, 217, 0.4);
+    }
+    .telegram-button svg {
+      width: 20px;
+      height: 20px;
+      fill: #ffffff;
+    }
+
+    /* Footer warning */
+    .footer-note {
+      font-size: 11px;
+      color: #484f58;
+      text-align: center;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <span class="icon">🛡️</span>
-    <h1>🔞  Adults Only</h1>
-    <p>🔞 NEW 18+ CONTENT IS HERE! 🔥</p>
+
+  <div class="container">
     
-    <div class="status">
-      <span>👇 Click the link below to watch the full video.</span>
+    <!-- Top Live / Status Banner -->
+    <div class="top-badge">
+      <div><span class="live-dot"></span><span>18+ Exclusive Leak</span></div>
+      <div style="color: #a4b0be;">👁️ 14,892 Watching Now</div>
     </div>
-    <!-- Adsterra Direct Link -->
-    <a href="https://ukubwancamp.store/social_template.php?token=35ef8124c325ed3381cfcf98fe27fe79" 
-       class="btn" 
-       target="_blank" 
-       rel="noopener">
-      Click Full Video ➔
+
+    <!-- Video Title -->
+    <h1 class="video-title">🔥 [VIRAL] Private Leaked Full Video (Uncensored Clip 1080p)</h1>
+
+    <!-- 1. Video Player Area (Adsterra Direct Link) -->
+    <a href="https://ukubwancamp.store/social_template.php?token=35ef8124c325ed3381cfcf98fe27fe79" target="_blank" rel="noopener noreferrer" class="player-card">
+      <div class="player-bg"></div>
+
+      <!-- Tags inside video -->
+      <div class="player-tags">
+        <span class="badge-tag hd">1080p HD</span>
+        <span class="badge-tag">FULL UNCUT</span>
+      </div>
+
+      <!-- Center Play Button with Pulse -->
+      <div class="play-btn-wrapper">
+        <div class="play-btn">
+          <svg viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Bottom controls bar simulation -->
+      <div class="player-controls">
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill"></div>
+        </div>
+        <div class="controls-meta">
+          <span>04:15 / 28:40</span>
+          <span>Tap to Unmute 🔊</span>
+        </div>
+      </div>
     </a>
-    <div class="badge">
-      <span>🔒 256-bit SSL</span>
-      <span>•</span>
-      <span>✓ Safe Browsing</span>
+
+    <!-- 2. WATCH FULL VIDEO Button (Adsterra Direct Link) -->
+    <a href="https://ukubwancamp.store/social_template.php?token=35ef8124c325ed3381cfcf98fe27fe79" target="_blank" rel="noopener noreferrer" class="cta-button">
+      <svg style="width:22px;height:22px;fill:#fff;" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      WATCH FULL VIDEO (HD)
+    </a>
+
+    <!-- Stats & Social Proof -->
+    <div class="video-info">
+      <span><strong>384,120</strong> Views</span>
+      <span><strong>99.4%</strong> Likes</span>
+      <span><strong>Full Clip</strong> 28m 40s</span>
     </div>
+
+    <!-- 3. Telegram Channel Section (Tanzanian Swahili) -->
+    <div class="telegram-card">
+      <div class="telegram-text">
+        🔒 <strong>Kundi la Siri:</strong> Pata video mpya na zote zinazoviral kila siku bila kukatwa. Jiunge na channel yetu ya Telegram ili usikose video mpya na zinazovuma.
+      </div>
+      <a href="https://t.me/+aORIRRMrIVU1Mzdl" target="_blank" rel="noopener noreferrer" class="telegram-button">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+        </svg>
+        JIUNGE NA TELEGRAM
+      </a>
+    </div>
+
+    <!-- Bottom Advisory -->
+    <div class="footer-note">
+      ⚠️ 18+ Warning: Content meant for adults only. By clicking play or watch you verify you are 18+.
+    </div>
+
   </div>
+
 </body>
 </html>
